@@ -74,7 +74,7 @@ bool CEEPROM::getValue(char *key, long *val)
 
    _init();  // ouvre le fichier s'il ne l'est pas déjà
    if (m_configFile.getValue(key, &value[0], sizeof(value))) {
-    sscanf(value, "%d", val);
+    sscanf(value, "%ld", val);
 	ret= true;  // La donnée existe
   }
   return(ret);
